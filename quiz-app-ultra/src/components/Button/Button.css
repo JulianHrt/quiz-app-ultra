@@ -1,0 +1,13 @@
+.card__button-answer {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+}
+
+.card__button-answer:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}

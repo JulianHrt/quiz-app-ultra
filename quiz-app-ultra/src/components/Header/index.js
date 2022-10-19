@@ -1,7 +1,9 @@
+import "./Header.css";
+
 function Header() {
   return (
-    <header>
-      <h1>Quiz-App!</h1>
+    <header class="header">
+      <h1 class="header__title">Quiz-App</h1>
     </header>
   );
 }
