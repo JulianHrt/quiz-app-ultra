@@ -6,18 +6,33 @@ import AddPage from "./pages/AddPage.js";
 import BookmarkPage from "./pages/BookmarkPage.js";
 import ProfilPage from "./pages/ProfilPage.js";
 import HomePage from "./pages/HomePage.js";
-import { cards } from "./components/utils/Array";
+import { myCardArray } from "./components/utils/Array.js";
 
 function App() {
   const [isActive, setActive] = useState("homePage");
+  const [isCards, setCards] = useState(myCardArray);
+
+  function appendCard(questionInput, answerInput, tagsInput) {
+    setCards((alterWert) => {
+      const neuerWert = [
+        ...alterWert,
+        { question: questionInput, answer: answerInput, tags: [tagsInput] },
+      ];
+      return neuerWert;
+    });
+  }
+
+  console.log(isCards);
 
   return (
     <div>
-      <Header />
+      {<Header />}
       <main>
-        {isActive === "homePage" && <HomePage cards={cards} />}
+        {isActive === "homePage" && <HomePage cards={isCards} />}
         {isActive === "bookmarkPage" && <BookmarkPage />}
-        {isActive === "addPage" && <AddPage />}
+        {isActive === "addPage" && (
+          <AddPage appendCard={appendCard} setActive={setActive} />
+        )}
         {isActive === "profilPage" && <ProfilPage />}
       </main>
       <footer>
