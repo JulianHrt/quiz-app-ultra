@@ -1,36 +1,27 @@
 import "./global.css";
 import Header from "./components/Header/";
-import Card from "./components/Card";
 import Navbar from "./components/Navbar/";
-
-const cards = [
-  { id: 1, question: "Frage?", answer: "Antwort!", tags: [1, 2, 3] },
-  { id: 2, question: "Frage2?", answer: "Antwort2!", tags: [1, 2, 3] },
-  { id: 3, question: "Frage3?", answer: "Antwort3!", tags: [1, 2, 3] },
-  { id: 4, question: "Frage4?", answer: "Antwort4!", tags: [1, 2, 3] },
-  { id: 5, question: "Frage5?", answer: "Antwort5!", tags: [1, 2, 3] },
-];
+import { useState } from "react";
+import AddPage from "./pages/AddPage.js";
+import BookmarkPage from "./pages/BookmarkPage.js";
+import ProfilPage from "./pages/ProfilPage.js";
+import HomePage from "./pages/HomePage.js";
+import { cards } from "./components/utils/Array";
 
 function App() {
+  const [isActive, setActive] = useState("homePage");
+
   return (
     <div>
       <Header />
       <main>
-        <ul className="card-list">
-          {cards.map((card) => {
-            return (
-              <Card
-                question={card.question}
-                answer={card.answer}
-                tags={card.tags}
-                key={card.id}
-              />
-            );
-          })}
-        </ul>
+        {isActive === "homePage" && <HomePage cards={cards} />}
+        {isActive === "bookmarkPage" && <BookmarkPage />}
+        {isActive === "addPage" && <AddPage />}
+        {isActive === "profilPage" && <ProfilPage />}
       </main>
       <footer>
-        <Navbar />
+        <Navbar isActive={isActive} setActive={setActive} />
       </footer>
     </div>
   );
