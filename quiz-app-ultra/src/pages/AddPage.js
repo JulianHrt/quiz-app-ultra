@@ -28,7 +28,7 @@ export default function AddPage({ appendCard, setActive }) {
         <textarea id="tags" name="tags"></textarea>
       </label>
       <label for="submit">
-        <button type="submit" id="submit">
+        <button className="button" type="submit" id="submit">
           submit
         </button>
       </label>

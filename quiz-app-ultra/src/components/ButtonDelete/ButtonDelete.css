@@ -1,0 +1,27 @@
+.DeleteButton {
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.DeleteButton:hover {
+  cursor: pointer;
+}
+
+.DeleteButton--active {
+  color: var(--black);
+}
+
+.DeleteButton__icon {
+  fill: currentcolor;
+  width: 2em;
+}
+
+.DeleteButton_Container {
+  position: absolute;
+  right: 0.5rem;
+  top: -1.5rem;
+}

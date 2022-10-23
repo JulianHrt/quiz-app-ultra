@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 
-export default function HomePage({ cards }) {
+export default function HomePage({ cards, deleteCard }) {
   return (
     <ul className="card-list">
       {cards.map((card, index) => {
@@ -10,6 +10,7 @@ export default function HomePage({ cards }) {
             answer={card.answer}
             tags={card.tags}
             key={card.question + index}
+            deleteCard={deleteCard}
           />
         );
       })}

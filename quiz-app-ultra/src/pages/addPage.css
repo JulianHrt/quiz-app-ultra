@@ -19,16 +19,16 @@ label textarea {
   font-family: var(--ff-primary);
 }
 
-button {
-  background: var(--white);
-  color: var(--black);
-  font-size: var(--fs-400);
-  font-family: var(--ff-primary);
-  border-radius: 15%;
+.button {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
 }
 
-button:hover {
+.button:hover {
+  opacity: 0.75;
   cursor: pointer;
-  background: var(--secondary-light);
-  color: var(--black);
 }

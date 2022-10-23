@@ -2,8 +2,9 @@ import Bookmark from "../Bookmark";
 import Button from "../Button";
 import "./Card.css";
 import { useState } from "react";
+import ButtonDelete from "../ButtonDelete";
 
-export default function Card({ question, answer, tags }) {
+export default function Card({ question, answer, tags, deleteCard }) {
   const [showAnswer, setShowAnswer] = useState(true);
   return (
     <li className="card-list__item">
@@ -26,6 +27,11 @@ export default function Card({ question, answer, tags }) {
           })}
         </ul>
         <Bookmark />
+        <ButtonDelete
+          onClick={() => {
+            deleteCard(question);
+          }}
+        />
       </article>
     </li>
   );
