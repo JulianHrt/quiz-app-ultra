@@ -16,19 +16,31 @@ function App() {
     setCards((alterWert) => {
       const neuerWert = [
         ...alterWert,
-        { question: questionInput, answer: answerInput, tags: [tagsInput] },
+        {
+          question: questionInput,
+          answer: answerInput,
+          tags: [tagsInput],
+        },
       ];
       return neuerWert;
     });
   }
 
-  console.log(isCards);
+  function deleteCard(key) {
+    console.log(key);
+    setCards((altesArray) => {
+      const neuesArray = altesArray.filter((item) => item.question !== key);
+      return neuesArray;
+    });
+  }
 
   return (
     <div>
       {<Header />}
       <main>
-        {isActive === "homePage" && <HomePage cards={isCards} />}
+        {isActive === "homePage" && (
+          <HomePage cards={isCards} deleteCard={deleteCard} />
+        )}
         {isActive === "bookmarkPage" && <BookmarkPage />}
         {isActive === "addPage" && (
           <AddPage appendCard={appendCard} setActive={setActive} />

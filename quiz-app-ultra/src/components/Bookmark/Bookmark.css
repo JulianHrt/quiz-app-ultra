@@ -11,17 +11,21 @@
   cursor: pointer;
 }
 
-.bookmark--active {
-  color: var(--black);
+.bookmark_icon {
+  background: var(--secondary);
+  fill: var(--white);
+  width: 2em;
 }
 
-.bookmark__icon {
-  fill: currentcolor;
+.bookmark__icon--active {
+  fill: black;
   width: 2em;
+  background-color: var(--secondary);
+  opacity: 0.75;
 }
 
 .card__button-bookmark {
   position: absolute;
-  right: 1rem;
+  right: 4rem;
   top: -1.5rem;
 }

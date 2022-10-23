@@ -5,7 +5,7 @@ export default function Bookmark() {
     <div className="card__button-bookmark">
       <button className="bookmark" aria-label="bookmark" type="button">
         <svg
-          className="bookmark__icon"
+          className="bookmark_icon"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
