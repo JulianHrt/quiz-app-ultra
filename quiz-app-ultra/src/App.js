@@ -30,8 +30,23 @@ function App() {
     console.log(key);
     setCards((altesArray) => {
       const neuesArray = altesArray.filter((item) => item.question !== key);
+
       return neuesArray;
     });
+  }
+
+  function toggleBookmark(cardID) {
+    const newArray = isCards.map((card) => {
+      if (card.question === cardID) {
+        return {
+          ...card,
+          isBookmarked: !card.isBookmarked,
+        };
+      } else {
+        return card;
+      }
+    });
+    setCards(newArray);
   }
 
   return (
@@ -39,7 +54,11 @@ function App() {
       {<Header />}
       <main>
         {isActive === "homePage" && (
-          <HomePage cards={isCards} deleteCard={deleteCard} />
+          <HomePage
+            cards={isCards}
+            deleteCard={deleteCard}
+            toggleBookmark={toggleBookmark}
+          />
         )}
         {isActive === "bookmarkPage" && (
           <BookmarkPage cards={isCards} deleteCard={deleteCard} />
