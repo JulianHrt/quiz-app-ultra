@@ -11,6 +11,7 @@ export default function HomePage({ cards, deleteCard }) {
             tags={card.tags}
             key={card.question + index}
             deleteCard={deleteCard}
+            isBookmarked={card.isBookmarked}
           />
         );
       })}

@@ -4,7 +4,13 @@ import "./Card.css";
 import { useState } from "react";
 import ButtonDelete from "../ButtonDelete";
 
-export default function Card({ question, answer, tags, deleteCard }) {
+export default function Card({
+  question,
+  answer,
+  tags,
+  deleteCard,
+  isBookmarked,
+}) {
   const [showAnswer, setShowAnswer] = useState(true);
   return (
     <li className="card-list__item">
@@ -26,7 +32,7 @@ export default function Card({ question, answer, tags, deleteCard }) {
             return <li className="card__tag-list-item">{tag}</li>;
           })}
         </ul>
-        <Bookmark />
+        <Bookmark isBookmarked={isBookmarked} />
         <ButtonDelete
           onClick={() => {
             deleteCard(question);

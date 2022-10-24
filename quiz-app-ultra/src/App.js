@@ -41,7 +41,9 @@ function App() {
         {isActive === "homePage" && (
           <HomePage cards={isCards} deleteCard={deleteCard} />
         )}
-        {isActive === "bookmarkPage" && <BookmarkPage />}
+        {isActive === "bookmarkPage" && (
+          <BookmarkPage cards={isCards} deleteCard={deleteCard} />
+        )}
         {isActive === "addPage" && (
           <AddPage appendCard={appendCard} setActive={setActive} />
         )}
