@@ -1,9 +1,14 @@
 import "./Bookmark.css";
 
-export default function Bookmark({ isBookmarked }) {
+export default function Bookmark({ isBookmarked, onClick }) {
   return (
     <div className="card__button-bookmark">
-      <button className="bookmark" aria-label="bookmark" type="button">
+      <button
+        className="bookmark"
+        aria-label="bookmark"
+        type="button"
+        onClick={onClick}
+      >
         <svg
           className={isBookmarked ? "bookmark__icon--active " : "bookmark_icon"}
           xmlns="http://www.w3.org/2000/svg"

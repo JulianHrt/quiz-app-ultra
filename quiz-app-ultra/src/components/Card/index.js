@@ -10,6 +10,7 @@ export default function Card({
   tags,
   deleteCard,
   isBookmarked,
+  toggleBookmark,
 }) {
   const [showAnswer, setShowAnswer] = useState(true);
   return (
@@ -32,7 +33,12 @@ export default function Card({
             return <li className="card__tag-list-item">{tag}</li>;
           })}
         </ul>
-        <Bookmark isBookmarked={isBookmarked} />
+        <Bookmark
+          isBookmarked={isBookmarked}
+          onClick={() => {
+            toggleBookmark(question);
+          }}
+        />
         <ButtonDelete
           onClick={() => {
             deleteCard(question);
