@@ -1,7 +1,7 @@
 import "./global.css";
 import Header from "./components/Header/";
 import Navbar from "./components/Navbar/";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddPage from "./pages/AddPage.js";
 import BookmarkPage from "./pages/BookmarkPage.js";
 import ProfilPage from "./pages/ProfilPage.js";
@@ -10,7 +10,13 @@ import { myCardArray } from "./components/utils/Array.js";
 
 function App() {
   const [isActive, setActive] = useState("homePage");
-  const [isCards, setCards] = useState(myCardArray);
+  const [isCards, setCards] = useState(() => {
+    return JSON.parse(localStorage.getItem("yourCards")) ?? myCardArray;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("yourCards", JSON.stringify(isCards));
+  }, [isCards]);
 
   function appendCard(questionInput, answerInput, tagsInput) {
     setCards((alterWert) => {
