@@ -6,7 +6,7 @@ export default function AddPage({ appendCard, setActive }) {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data.answer, data.question, data.tags);
+    console.log("hierkommen die Tag" + data.tags);
 
     appendCard(data.question, data.answer, data.tags);
 

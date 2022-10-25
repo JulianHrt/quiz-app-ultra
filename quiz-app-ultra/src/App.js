@@ -20,12 +20,13 @@ function App() {
 
   function appendCard(questionInput, answerInput, tagsInput) {
     setCards((alterWert) => {
+      const tagsArray = tagsInput.split(" ");
       const neuerWert = [
         ...alterWert,
         {
           question: questionInput,
           answer: answerInput,
-          tags: [tagsInput],
+          tags: tagsArray,
         },
       ];
       return neuerWert;
