@@ -68,7 +68,11 @@ function App() {
           />
         )}
         {isActive === "bookmarkPage" && (
-          <BookmarkPage cards={isCards} deleteCard={deleteCard} />
+          <BookmarkPage
+            cards={isCards}
+            deleteCard={deleteCard}
+            toggleBookmark={toggleBookmark}
+          />
         )}
         {isActive === "addPage" && (
           <AddPage appendCard={appendCard} setActive={setActive} />

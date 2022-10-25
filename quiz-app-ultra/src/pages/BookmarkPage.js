@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 
-export default function BookmarkPage({ cards, deleteCard }) {
+export default function BookmarkPage({ cards, deleteCard, toggleBookmark }) {
   const filteredArray = cards.filter((card) => {
     return card.isBookmarked === true;
   });
@@ -18,6 +18,7 @@ export default function BookmarkPage({ cards, deleteCard }) {
             key={card.question + index}
             deleteCard={deleteCard}
             isBookmarked={card.isBookmarked}
+            toggleBookmark={toggleBookmark}
           />
         );
       })}
